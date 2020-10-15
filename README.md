@@ -14,13 +14,11 @@
 | first_name_kana   | string       | null: false                   |
 | last_name_kana    | string       | null: false                   |
 | birthday          | date         | null: false                   |
-| purchase          | references   | null: false, foreign_key:true |  
 
 ### Association
 
-- has_many :Product
-- has_many :address
-- has-many :purchase
+- has_many :Products
+- has-many :purchases
 
 
 
@@ -29,21 +27,21 @@
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
 | name       | string       | null: false                   |
-| description| text         | null: false                   |
-| category_id| text         | null: false                   |
-| status_id  | text         | null: false                   |
-| burde_id   | text         | null: false                   |
-| area_id    | text         | null: false                   |
-| days_id    | text         | null: false                   |
+| description| integer      | null: false                   |
+| category_id| integer      | null: false                   |
+| status_id  | integer      | null: false                   |
+| burde_id   | integer      | null: false                   |
+| area_id    | integer      | null: false                   |
+| days_id    | integer      | null: false                   |
 | price      | integer      | null: false                   |
 | user       | references   | null: false, foreign_key:true | 
-| purchase   | references   | null: false, foreign_key:true |          
+        
 
 
 ### Association
 
 - belongs_to :user
-- has-one  :purchase
+- has_one  :purchase
 - has_one_attached :image
 
 
@@ -64,7 +62,7 @@
 
 ### Association
 
-- belongs_to :user
+- belongs_to :purchase
 
 
 
@@ -79,3 +77,4 @@
 
 - belongs_to :user
 - belongs_to :product
+- has_one    :street_address
