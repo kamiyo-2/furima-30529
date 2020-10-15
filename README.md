@@ -27,7 +27,7 @@
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
 | name       | string       | null: false                   |
-| description| integer      | null: false                   |
+| description| text         | null: false                   |
 | category_id| integer      | null: false                   |
 | status_id  | integer      | null: false                   |
 | burde_id   | integer      | null: false                   |
