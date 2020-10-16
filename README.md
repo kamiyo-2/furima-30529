@@ -17,12 +17,12 @@
 
 ### Association
 
-- has_many :products
+- has_many :items
 - has-many :purchases
 
 
 
-## Product テーブル
+## items テーブル
 
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
@@ -71,10 +71,10 @@
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
 | user       | references   | null: false, foreign_key:true |  
-| product    | references   | null: false, foreign_key:true |   
+| item       | references   | null: false, foreign_key:true |   
 
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 - has_one    :street_address
