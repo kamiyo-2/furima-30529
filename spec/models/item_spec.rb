@@ -72,5 +72,30 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not a number")
     end
+    it "category_idが0だと登録できない" do
+      @item.category_id = "0"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category must be other than 0")
+    end
+    it "status_idが0だと登録できない" do
+      @item.status_id = "0"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Status must be other than 0")
+    end
+    it "burde_idが0だと登録できない" do
+      @item.burde_id = "0"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Burde must be other than 0")
+    end
+    it "area_idが0だと登録できない" do
+      @item.area_id = "0"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Area must be other than 0")
+    end
+    it "day_idが0だと登録できない" do
+      @item.day_id = "0"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Day must be other than 0")
+    end
   end
 end
