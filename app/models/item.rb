@@ -13,5 +13,5 @@ class Item < ApplicationRecord
   validates :name, :description, :category_id, :status_id, 
             :burde_id, :area_id, :day_id, :price, presence: true     
             
-  validates :category_id, :status_id, :burde_id, :area_id, :day_id, numericality: { other_than: 1 } 
+  validates :category_id, :status_id, :burde_id, :area_id, :day_id, numericality: { other_than: 0 } 
 end
