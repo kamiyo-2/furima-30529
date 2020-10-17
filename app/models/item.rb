@@ -11,7 +11,14 @@ class Item < ApplicationRecord
   belongs_to :user
 
   validates :name, :description, :category_id, :status_id, 
-            :burde_id, :area_id, :day_id, :price, presence: true     
+            :burde_id, :area_id, :day_id, :price, :image, presence: true     
             
   validates :category_id, :status_id, :burde_id, :area_id, :day_id, numericality: { other_than: 0 } 
+
+  validates :price,
+    numericality: { only_integer: true,
+    greater_than: 300, less_than: 9999999
+  }
 end
+
+
