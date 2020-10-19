@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has-many :purchases
+- has-many :orders
 
 
 
@@ -62,11 +62,11 @@
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :order
 
 
 
-## purchase  テーブル
+## orders  テーブル
 
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
