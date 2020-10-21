@@ -1,5 +1,5 @@
 class StreetAddress < ApplicationRecord
-belongs_to :purchase
+belongs_to :order
 
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to_active_hash :area

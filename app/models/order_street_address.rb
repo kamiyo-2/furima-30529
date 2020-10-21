@@ -1,6 +1,6 @@
 class OrderStreetAddress
   include ActiveModel::Model
-  attr_accessor :post_code, :area_id, :city, :address, :building_name, :phone_number, :order, :user, :item
+  attr_accessor :post_code, :area_id, :city, :address, :building_name, :phone_number, :user_id, :item_id
 
  
 
@@ -10,14 +10,14 @@ class OrderStreetAddress
     validates :city       
     validates :address
     validates :phone_number, length: { minimum: 11 }
-    validates :order
-    validates :user
-    validates :item
+    validates :user_id
+    validates :item_id
   end
 
     def save
-      oder = Oder.create(user: user, item: item)
-      Street_address.create(post_code: post_code, area_id: prefectures_id, city: city, address: address, building_name: building_name, phone_number: phone_number, order: order.id)
+     
+      order = Order.create(user_id: user_id, item_id: item_id)
+      StreetAddress.create(post_code: post_code, area_id: area_id, city: city, address: address, building_name: building_name, phone_number: phone_number, order_id: order.id )
     end
 
 end

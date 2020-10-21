@@ -90,5 +90,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_111417) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users"
   add_foreign_key "street_addresses", "orders"
 end

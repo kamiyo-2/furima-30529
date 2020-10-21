@@ -19,8 +19,7 @@
       </div>
     </div>
     <%# /購入内容の表示 %>
-
-    <%# 支払額の表示 %>
+    <%# 支払額の表示 %> 
     <div class='item-payment'>
       <h1 class='item-payment-title'>
         支払金額
@@ -42,7 +41,7 @@
           <label class="form-text">カード情報</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field 'hoge', class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+        <%= f.text_field @item.user, class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
         <div class='available-card'>
           <%= image_tag 'card-visa.gif', class: 'card-logo'%>
           <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
