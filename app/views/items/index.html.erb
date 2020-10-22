@@ -46,7 +46,7 @@
         <p class='reason-list-description'>
           めんどくさい入力は必要なく、検索も購入もスムーズ！
         </p>
-      </li>
+      </li> 
       <li class='list'>
         <%= image_tag "furima-intro03.png", class:"list-pict" %>
         <span class='reason-list-number'>3</span>
@@ -135,9 +135,11 @@
           <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
+          <% if item.order != nil %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+          <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
 
         </div>
