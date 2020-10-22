@@ -1,6 +1,6 @@
 class OrderStreetAddress
   include ActiveModel::Model
-  attr_accessor :post_code, :area_id, :city, :address, :building_name, :phone_number, :user_id, :item_id
+  attr_accessor :post_code, :area_id, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token
 
  
 
@@ -12,6 +12,7 @@ class OrderStreetAddress
     validates :phone_number, length: { minimum: 11 }
     validates :user_id
     validates :item_id
+    validates :token, presence: true
   end
 
     def save
