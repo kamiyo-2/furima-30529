@@ -7,8 +7,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :day
 
 
+
   has_one_attached :image
   belongs_to :user
+  has_one  :order
 
   validates :name, :description, :category_id, :status_id, 
             :burde_id, :area_id, :day_id, :price, :image, presence: true     

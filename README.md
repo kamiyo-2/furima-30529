@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has-many :purchases
+- has-many :orders
 
 
 
@@ -41,7 +41,7 @@
 ### Association
 
 - belongs_to :user
-- has_one  :purchase
+- has_one  :order
 - has_one_attached :image
 
 
@@ -62,11 +62,11 @@
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :order
 
 
 
-## purchase  テーブル
+## orders  テーブル
 
 | Column     | Type         | ----------------------------- |
 | ---------- | ------------ | ----------------------------- |
