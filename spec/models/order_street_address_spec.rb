@@ -40,12 +40,22 @@ describe OrderStreetAddress do
       it "phone_numberが空では登録できない" do
         @order_street_address.phone_number = nil
         @order_street_address.valid?
-        expect(@order_street_address.errors.full_messages).to include("Phone number can't be blank", "Phone number is too short (minimum is 11 characters)")
+        expect(@order_street_address.errors.full_messages).to include("Phone number can't be blank", "Phone number is too short (minimum is 10 characters)")
       end
-      it "phone_numberが11文字でないと登録できない" do
+      it "phone_numberが10文字か11文字より少ない番号では登録できない" do
         @order_street_address.phone_number = "090"
         @order_street_address.valid?
-        expect(@order_street_address.errors.full_messages).to include("Phone number is too short (minimum is 11 characters)")
+        expect(@order_street_address.errors.full_messages).to include("Phone number is too short (minimum is 10 characters)")
+      end
+      it "phone_numberが10文字か11文字よ多い番号では登録できない" do
+        @order_street_address.phone_number = "090123456789123456"
+        @order_street_address.valid?
+        expect(@order_street_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
+      it "phone_numberにハイフンが含まれていると、登録できない" do
+        @order_street_address.phone_number = "090-1234-5678"
+        @order_street_address.valid?
+        expect(@order_street_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
       end
       it "post_codeにハイフンがないと登録できない" do
         @order_street_address.post_code = "1234567"
@@ -60,3 +70,5 @@ describe OrderStreetAddress do
     end
   end
 end
+
+

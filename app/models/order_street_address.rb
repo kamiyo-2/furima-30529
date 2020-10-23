@@ -9,7 +9,7 @@ class OrderStreetAddress
     validates :area_id           
     validates :city       
     validates :address
-    validates :phone_number, length: { minimum: 11 }
+    validates :phone_number, length: { in: 10..11 }
     validates :user_id
     validates :item_id
     validates :token, presence: true
